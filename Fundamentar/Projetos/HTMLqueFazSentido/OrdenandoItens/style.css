@@ -1,0 +1,27 @@
+.box{
+
+    display: flex;
+    border: 1px dashed red;
+}
+
+
+.box div{
+        border: 1px solid;
+}
+
+.box div:nth-child(1){
+    order: 1;
+    /*serve como uma maneira visual e nao estrutural*/
+}
+
+.box div:nth-child(2){
+    order: 0;
+}
+
+.box div:nth-child(3){
+    order: 0;
+}
+
+.box div:nth-child(4){
+    order: 0;
+}

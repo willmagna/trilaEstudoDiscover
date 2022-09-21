@@ -1,0 +1,7 @@
+/*Regra CSS, iniciar o @import no início do arquivo CSS*/
+/*@import '';*/
+/*@ é mais lento que o link*/
+
+h1 {
+    color: blue;
+}
