@@ -1,0 +1,22 @@
+{
+    "nome": "William Lodea Magnabosco",
+    "cidade": "São Paulo",
+    "telefone": 654654654654,
+    "livros_favoritos": [
+            "livro1",
+            "livro2",
+            "livro3"
+    ],
+    "hobbies": {
+        "semana": "hobby1",
+        "fim_de_semana": {
+            "Sábado": "hobb2",
+            "Domngo": "Hobby3",
+            "Outro": [
+                "Caminhada",
+                "Churrascada",
+                "Tiro e grito"
+            ]
+        }
+    }
+}
