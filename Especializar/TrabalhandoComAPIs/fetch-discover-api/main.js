@@ -7,8 +7,8 @@ function getUsers(){
     .catch(error => console.error(error))
 }
 
-function getUser()  {
-    fetch(`${url}/18`)
+function getUser(id)  {
+    fetch(`${url}/${id}`)
     .then(response => response.json())
     .then(data => {
         userName.textContent = data.name
@@ -20,9 +20,35 @@ function getUser()  {
 
 
 function addUser(newUser){
-    fetch(url, {
+    fetch(`${url}`, {
         method: "POST",
         body: JSON.stringify(newUser),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(data => alertApi.textContent = data)
+    .catch(error => console.error(error))
+}
+
+
+function updateUser(constUpdateUser, id){
+    fetch(`${url}/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(constUpdateUser),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(data => alertApi.textContent = data)
+    .catch(error => console.error(error))
+}
+
+function deleteUser(id){
+    fetch(`${url}/${id}`, {
+        method: "DELETE",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
@@ -38,10 +64,19 @@ const newUser = {
     city: "Sinop"
 }
 
-addUser(newUser)
+const constUpdateUser = {
+    name: "Olcir Magnabosco",
+    avatar: "http://lorempixel.com.br/400/200",
+    city: "Sinop"
+}
 
+
+addUser(newUser)
+//updateUser(constUpdateUser, 5);
+//deleteUser(4);
 getUsers()
-getUser()
+getUser(4);
+
 
 /*
 
