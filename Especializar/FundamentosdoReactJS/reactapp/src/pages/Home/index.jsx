@@ -6,7 +6,7 @@
 //<>
 //</>
 
-import React, { useState } from 'react'; //permite que cria estado
+import React, { useState, useEffect } from 'react'; //permite que cria estado
 
 import './styles.css';
 
@@ -16,6 +16,7 @@ export function Home() {
 
   const [studentName, setStudentName] = useState(''); //estado
   const [students, setStudents] = useState([]);
+  const [user, setUser] = useState({ name: '', avatar: ''});
 
   function handleAddStudent(){
     const newStudent = {
@@ -30,14 +31,31 @@ export function Home() {
   }
 
 
+//Declaração do hook useEffect
+useEffect(() => {
+  //corpo do useEffect
+  //executado automaticamente assim que a interface for renderizada
+  fetch('https://api.github.com/users/willmagna')
+  .then(response => response.json())
+  .then(data => {
+    setUser({
+      name: data.name,
+      avatar: data.avatar_url,
+    })
+  })
+  .catch(error => console.error(error))
+
+}, []); //o array significa a dependencia do estado  
+
+
   return (
     <div className="container">
       
       <header>
-        <h1>Nome: {studentName}</h1>
+        <h1>Lista de presença</h1>
         <div>
-            <strong>will.magna</strong>
-            <img src="https://avatars.githubusercontent.com/u/18670313?v=4" alt="AvatarPerfil" />
+            <strong>{user.name}</strong>
+            <img src={user.avatar} alt="AvatarPerfil" />
         </div>
       </header>
 
