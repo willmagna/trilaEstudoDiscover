@@ -4,3 +4,4 @@
 - Upload do certificado 
 - Javascript Assíncrono e Promises
 - Trabalhando com APIs... 22/09/2022 áS 13h35
+- Subindo exercícios com API
