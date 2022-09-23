@@ -32,7 +32,14 @@ export function Home() {
 
   return (
     <div className="container">
-      <h1>Nome: {studentName}</h1>
+      
+      <header>
+        <h1>Nome: {studentName}</h1>
+        <div>
+            <strong>will.magna</strong>
+            <img src="https://avatars.githubusercontent.com/u/18670313?v=4" alt="AvatarPerfil" />
+        </div>
+      </header>
 
       <input  
         type="text" 
@@ -45,7 +52,13 @@ export function Home() {
       </button>
 
       {
-        students.map(student => <Card name={student.name} time={student.time}/> )
+        students.map(student => (
+          <Card 
+            key={student.time}
+            name={student.name} 
+            time={student.time}
+          /> 
+        ))
       }
 
     </div>
