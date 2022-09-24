@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transition Delay</title>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box-red {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+
+        .box-red {
+            background-color: red;
+            transition: background-color 1s ease 4s;
+            /*transtition: property, duration, time-function, delay*/
+        }
+
+        .box-red:hover {
+            background-color: #ffff00;
+            transition-property: background-color;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 4s;
+        }
+    </style>
+
+</head>
+<body>
+   <div class="box-red"></div>
+</body>
+</html>
